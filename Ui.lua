@@ -1,14 +1,3 @@
-local function dhraper()
-  warn("raping da hood lol")
-end
-
-dhraper()
-dhraper()
-dhraper()
-dhraper()
-dhraper()
-dhraper()
-
 if game.CoreGui:FindFirstChild("Neverlose1") then
     game.CoreGui.Neverlose1:Destroy()
 end
