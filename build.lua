@@ -1,15 +1,14 @@
-local Build_Info = {}
+local success, BuildInfo = pcall(function()
+    return loadstring(game:HttpGet(
+        "https://raw.githubusercontent.com/VSUDEVELOPMENTS/VSU-PROJECTS/refs/heads/main/build.lua"
+    ))()
+end)
 
-function Build_Info:VersionType()
-    return '1.0.0'
+if not success or type(BuildInfo) ~= "table" then
+    BuildInfo = {}
 end
 
-function Build_Info:GetBuild()
-    return 'Jan 02 2026'
-end
-
-function Build_Info:GetBuildType()
-    return 'Private'
-end
-
-return Build_Info
+-- Ensure required fields exist
+BuildInfo["Build Type"] = BuildInfo["Build Type"] or "Release"
+BuildInfo.Version = BuildInfo.Version or "Unknown"
+BuildInfo.Build = BuildInfo.Build or "Local"
